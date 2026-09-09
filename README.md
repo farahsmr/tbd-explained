@@ -8,5 +8,8 @@ I’m writing this mainly for two reasons. The first is pretty simple: I learn b
 
 > **A small note:** I’m a recent CS graduate and still early in my own journey, so this is written from my current understanding rather than from the perspective of an expert. If you notice something I’ve misunderstood or explained incorrectly, feel free to let me know.
 
+## The Bigger Picture
+A commonly known way teams work is with feature branches, where each piece of work gets its own dedicated branch. That branch might live for a really long time, sometimes even months, before it's merged back. Trunk-based development does the opposite: instead of waiting for a feature to be finished, developers merge small changes into one shared branch continuously, at least once a day.
+
 
 
