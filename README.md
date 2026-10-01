@@ -9,7 +9,23 @@ I’m writing this mainly for two reasons. The first is pretty simple: I learn b
 > **A small note:** I’m a recent CS graduate and still early in my own journey, so this is written from my current understanding rather than from the perspective of an expert. If you notice something I’ve misunderstood or explained incorrectly, feel free to let me know.
 
 ## The Bigger Picture
-A commonly known way teams work is with feature branches, where each piece of work gets its own dedicated branch. That branch might live for a really long time, sometimes even months, before it's merged back. Trunk-based development does the opposite: instead of waiting for a feature to be finished, developers merge small changes into one shared branch continuously, at least once a day.
+A common way of working with Git is using feature branches. A task gets its own branch, work happens there, and once it is finished the branch gets merged back into main.
+That is also the workflow I was most familiar with, so at first trunk-based development sounded a bit strange. The main difference is really how long work stays separate.
+
+With a long-lived feature branch, development can continue there for days or even weeks while main is changing at the same time. Meanwhile, other people are adding code, changing files, refactoring things and eventually the branch has to be merged back, but by then both sides may have changed quite a lot.
+
+TBD tries to keep that gap small. There is still one main branch, usually main, and developers keep integrating their changes back into it instead of letting branches grow for a long time.
+Branches can still exist. That part confused me at first because some explanations make trunk-based development sound like everybody has to work directly on main, which is not necessarily the case.
+
+
+```text
+main
+ ├── feature/login-validation
+ ├── fix/navbar-spacing
+ └── refactor/user-service
+```
+
+The difference is that these branches are meant to be temporary. A small change is made, reviewed, merged, and then the branch is gone again.
 
 
 
