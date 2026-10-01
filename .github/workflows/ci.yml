@@ -1,0 +1,38 @@
+# PR opened
+#    ↓
+# GitHub runs CI automatically
+#    ↓
+# checks app.py
+#    ↓
+# valid → green check
+# broken → red check
+
+name: CI
+
+# Run CI for pull requests
+# Also run when main changes
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-python:
+    # Use a temporary Ubuntu machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the repository code
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      # Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Check app.py for syntax errors
+      - name: Check Python file
+        run: python -m py_compile demo/app.py
