@@ -142,3 +142,65 @@ Those parts can be added gradually as long as each change leaves the shared bran
 That seems to be a big part of trunk-based development: not making the work smaller just for the sake of it, but avoiding a large amount of isolated work that only gets integrated at the end.
 
 
+## CI
+
+The next thing I tried was adding CI to the pull request.
+I created a small GitHub Actions workflow that checks `app.py` automatically whenever a pull request is opened or something is pushed to `main`.
+
+```yaml
+# PR opened
+#    ↓
+# GitHub runs CI automatically
+#    ↓
+# checks app.py
+#    ↓
+# valid → green check
+# broken → red check
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python file
+        run: python -m py_compile demo/app.py
+```
+
+For this demo it only checks whether the Python file has valid syntax. A real project would usually run more useful things here, such as tests or linting...
+
+After I pushed the workflow, the check appeared directly on the pull request:
+
+<img src="images/02-ci-passed.png" alt="CI check passing before merge" width="750">
+
+I had seen green checks on GitHub many times before, but setting one up myself made it much clearer where they actually come from and what happens before a pull request gets that check.
+
+## Final Thoughts
+
+Before reading about trunk-based development, I mostly thought about branches by what they were for:
+
+```text
+feature → feature branch
+bug     → bugfix branch
+```
+
+I did not pay much attention to how long they existed, and this is probably the biggest change for me.
+The demo was obviously very small, but going through the whole process myself helped a lot. Creating the branch, opening the pull request, watching CI run and then merging it made the idea feel much less abstract.
+What I originally understood as another Git branching strategy now feels more like a way of avoiding work staying separate for too long.
+I also think this is the part I will probably keep in mind the next time I work in a larger project: not just what branch to create, but how long that branch should really stay around.
+
