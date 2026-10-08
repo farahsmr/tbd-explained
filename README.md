@@ -69,35 +69,6 @@ After the change passed the checks, I merged the branch back into `main` and del
 
 <img src="images/03-branch-merged.png" alt="Feature branch merged back into main" width="700">
 
-## Another Example
-
-I kept the demo itself simple. The original program only printed:
-
-```python
-print("Welcome")
-```
-
-I then created a branch:
-
-```bash
-git switch -c feature/new-homepage
-```
-
-and changed the program to:
-
-```python
-NEW_HOMEPAGE_ENABLED = False
-
-if NEW_HOMEPAGE_ENABLED:
-    print("Welcome to the new homepage")
-else:
-    print("Welcome")
-```
-
-This was already enough to try the workflow without building a whole application around it.
-The branch was pushed, opened as a pull request, checked, merged into `main`, and then deleted.
-
-
 ## What About Unfinished Code?
 
 The feature flag would be the most useful part of the demo to understand this.
