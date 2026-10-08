@@ -175,3 +175,16 @@ The demo was obviously very small, but going through the whole process myself he
 What I originally understood as another Git branching strategy now feels more like a way of avoiding work staying separate for too long.
 I also think this is the part I will probably keep in mind the next time I work in a larger project: not just what branch to create, but how long that branch should really stay around.
 
+
+
+
+
+
+## Sources
+
+- [Ludovic Toison - “Our Journey from Gitflow to Trunk Based Development”](https://www.youtube.com/watch?v=DDkjBqlks40)
+- [Trunk Based Development - Introduction](https://trunkbaseddevelopment.com/)
+- [Trunk Based Development - Short-Lived Feature Branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/)
+- [Martin Fowler - Feature Flags](https://martinfowler.com/bliki/FeatureFlag.html)
+- [GitHub Docs - Building and testing Python with GitHub Actions](https://docs.github.com/en/actions/tutorials/build-and-test-code/python?learn=continuous_integration)
+
