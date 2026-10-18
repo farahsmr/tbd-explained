@@ -187,4 +187,5 @@ I also think this is the part I will probably keep in mind the next time I work 
 - [Trunk Based Development - Short-Lived Feature Branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/)
 - [Martin Fowler - Feature Flags](https://martinfowler.com/bliki/FeatureFlag.html)
 - [GitHub Docs - Building and testing Python with GitHub Actions](https://docs.github.com/en/actions/tutorials/build-and-test-code/python?learn=continuous_integration)
+- [What is Trunk Based Development - explained in 3 min](https://www.youtube.com/watch?v=96vWcLK16Nc)
 
