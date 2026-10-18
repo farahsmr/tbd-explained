@@ -180,6 +180,16 @@ I also think this is the part I will probably keep in mind the next time I work 
 
 
 
+
+
+
+
+
+
+
+
+
+
 ## Sources
 
 - [Ludovic Toison - “Our Journey from Gitflow to Trunk Based Development”](https://www.youtube.com/watch?v=DDkjBqlks40)
